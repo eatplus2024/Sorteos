@@ -66,9 +66,9 @@ li {
   margin-top: 20px;
   font-size: 22px;
   font-weight: bold;
-  width: 100%;
-  max-width: 600px; /* Igual al max-width de la caja de los participantes */
-  height: 180px; /* Más altura para dar espacio a los iconos */
+  width: 80%; /* 80% del ancho máximo */
+  max-width: 480px; /* 80% de 600px */
+  height: 90px; /* La mitad de la altura anterior */
   margin: 20px auto; /* Centramos la caja */
   color: #333;
   background-color: rgba(249, 249, 249, 0.9); /* Fondo casi transparente */
@@ -92,7 +92,7 @@ li {
   content: "🎉🎉🎁🎁";
   position: absolute;
   font-size: 24px;
-  top: -50px; /* Mueve los iconos más arriba */
+  top: -30px; /* Ajusta los iconos para que queden más arriba del texto */
   left: 50%;
   transform: translateX(-50%);
   animation: sparkle 1s infinite alternate;
@@ -115,7 +115,7 @@ li {
   }
 
   #digitalBoard {
-    max-width: 100%;
+    max-width: 90%; /* Ajusta el ancho al 90% del contenedor principal */
     font-size: 18px;
     padding: 15px;
   }
