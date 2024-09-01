@@ -64,12 +64,12 @@ li {
 
 #digitalBoard {
   margin-top: 20px;
-  font-size: 18px; /* Ajuste del tamaño de la fuente para dispositivos móviles */
+  font-size: 20px;
   font-weight: bold;
   width: 100%;
-  max-width: 300px; /* Reducción del tamaño máximo para que no se salga en móviles */
-  height: 70px; /* Ajuste de la altura */
-  margin: auto;
+  max-width: 100%; /* Ajuste de ancho al 100% del contenedor */
+  height: auto; /* Deja que la altura sea automática */
+  margin: 0 auto; /* Centrar la caja */
   color: #333;
   background-color: rgba(249, 249, 249, 0.9); /* Fondo casi transparente para dar efecto de cristal */
   padding: 10px;
@@ -92,10 +92,10 @@ li {
 #digitalBoard.winner::after {
   content: "🎉🎉🎁🎁";
   position: absolute;
-  font-size: 24px; /* Tamaño de iconos reducido */
-  top: 10%; /* Ajuste vertical para que salgan más arriba del nombre */
+  font-size: 24px; /* Tamaño de iconos ajustado */
+  top: -20px; /* Mover los iconos más arriba */
   left: 50%; /* Centra los iconos horizontalmente en el contenedor */
-  transform: translate(-50%, -50%); /* Ajusta la posición para que esté centrado */
+  transform: translateX(-50%); /* Ajuste horizontal para que esté centrado */
   animation: sparkle 1s infinite alternate;
 }
 
@@ -123,6 +123,6 @@ li {
 
   #digitalBoard.winner::after {
     font-size: 18px; /* Tamaño de los iconos aún más reducido en móviles */
-    top: 5%; /* Mayor separación en móviles */
+    top: -10px; /* Mover los iconos más arriba en móviles */
   }
 }
