@@ -90,7 +90,7 @@ li {
 }
 
 #digitalBoard.winner::after {
-  content: "🎉🎉🎁🎁";
+  content: "🎉🎁";
   position: absolute;
   font-size: 20px; /* Tamaño de iconos reducido */
   top: 20%; /* Ajuste vertical */
