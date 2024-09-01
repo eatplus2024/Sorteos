@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-image: url(https://cdn.pixabay.com/photo/2016/03/28/09/54/fireworks-1285269_1280.jpg);
+  background-image: url('https://cdn.pixabay.com/photo/2016/03/28/09/54/fireworks-1285269_1280.jpg');
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -12,7 +12,7 @@ body {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #7caefe; /* Azul suave y acogedor */
+  background: rgba(124, 174, 254, 0.5); /* Fondo cristalino azul con transparencia */
   border: 3mm solid gold; /* Bordes dorados de 3mm */
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -64,14 +64,14 @@ li {
 
 #digitalBoard {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 18px; /* Ajuste del tamaño de la fuente para dispositivos móviles */
   font-weight: bold;
   width: 100%;
-  max-width: 600px;
-  height: 100px;
+  max-width: 400px; /* Reducción del tamaño máximo */
+  height: 80px; /* Ajuste de la altura */
   margin: auto;
   color: #333;
-  background-color: #f9f9f9;
+  background-color: rgba(249, 249, 249, 0.9); /* Fondo casi transparente para dar efecto de cristal */
   padding: 10px;
   border-radius: 5px;
   display: flex;
@@ -84,19 +84,19 @@ li {
 #digitalBoard.winner {
   background-color: #FFD700; /* Color dorado */
   color: #000;
-  font-size: 24px;
+  font-size: 20px; /* Ajuste del tamaño de la fuente en modo ganador */
   position: relative; /* Asegura que los iconos se posicionen correctamente dentro del contenedor */
-      overflow: hidden; /* Evita que los iconos se muestren fuera del contenedor */
-  }
+  overflow: hidden; /* Evita que los iconos se muestren fuera del contenedor */
+}
 
-  #digitalBoard.winner::after {
-      content: "🎉🎁";
-      position: 8 mmm;
-      font-size: 30px;
-      top: 50%; /* Centra los iconos verticalmente en el contenedor */
-      left: 50%; /* Centra los iconos horizontalmente en el contenedor */
-      transform: translate(-50%, -50%); /* Ajusta la posición para que esté a 2 milímetros */
-      animation: sparkle 1s infinite alternate;
+#digitalBoard.winner::after {
+  content: "🎉🎉🎁🎁";
+  position: absolute;
+  font-size: 20px; /* Tamaño de iconos reducido */
+  top: 20%; /* Ajuste vertical */
+  left: 50%; /* Centra los iconos horizontalmente en el contenedor */
+  transform: translate(-50%, -50%); /* Ajusta la posición para que esté centrado */
+  animation: sparkle 1s infinite alternate;
 }
 
 @keyframes sparkle {
