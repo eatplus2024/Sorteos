@@ -91,10 +91,10 @@ li {
 #digitalBoard.winner::after {
   content: "🎉🎉🎁🎁";
   position: absolute;
-  font-size: 24px;
+  font-size: 26px;
   top: -20px; /* Ajusta los iconos para que queden un poco más arriba del texto y un poco mas a la izquierda */
-  left: 90%;
-  transform: translateX(-90%);
+  left: 100%;
+  transform: translateX(-100%);
   animation: sparkle 1s infinite alternate;
 }
 
