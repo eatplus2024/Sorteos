@@ -66,9 +66,9 @@ li {
   margin-top: 20px;
   font-size: 22px;
   font-weight: bold;
-  width: 80%; /* 80% del ancho máximo */
-  max-width: 480px; /* 80% de 600px */
-  height: 90px; /* La mitad de la altura anterior */
+  width: 65%; /* 65% del ancho máximo */
+  max-width: 400px; /* 75% de 600px */
+  height: 45px; /* La mitad de la altura anterior */
   margin: 20px auto; /* Centramos la caja */
   color: #333;
   background-color: rgba(249, 249, 249, 0.9); /* Fondo casi transparente */
