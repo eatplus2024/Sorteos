@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>SorteoApp</h1>
-    <p>Ingresa al sorteo:</p>
-    <input type="text" id="name" placeholder="Tu nombre">
-    <button onclick="addParticipant()">Participar</button>
+    <div class="main-container">
+        <img src="https://cdn.pixabay.com/photo/2024/08/31/18/47/18-47-52-728_960_720.png" alt="Logotipo" class="logo">
+        <h1>SorteoApp</h1>
+        <p>Ingresa al sorteo:</p>
+        <input type="text" id="name" placeholder="Tu nombre">
+        <button onclick="addParticipant()">Participar</button>
 
-    <h2>Participantes</h2>
-    <ul id="participantsList"></ul>
+        <h2>Participantes</h2>
+        <div class="glass-box">
+            <ul id="participantsList"></ul>
+        </div>
 
-    <h2>Ganador</h2>
-    <div id="digitalBoard">Nadie ha ganado aún</div>
-    <button onclick="pickWinner()">Elegir Ganador</button>
+        <h2>Ganador</h2>
+        <div id="digitalBoard">Nadie ha ganado aún</div>
+        <button onclick="pickWinner()">Elegir Ganador</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
