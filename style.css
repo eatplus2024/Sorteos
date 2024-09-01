@@ -93,8 +93,8 @@ li {
   position: absolute;
   font-size: 24px;
   top: -20px; /* Ajusta los iconos para que queden un poco más arriba del texto y un poco mas a la izquierda */
-  left: 80%;
-  transform: translateX(-80%);
+  left: 90%;
+  transform: translateX(-90%);
   animation: sparkle 1s infinite alternate;
 }
 
