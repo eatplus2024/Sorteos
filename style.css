@@ -90,9 +90,9 @@ li {
 
 #digitalBoard.winner::after {
   content: "🎉🎉🎁🎁";
-  position: absolute;
+  position: absolute; /* contrado con el titulo "Ganador" */
   font-size: 24px;
-  top: -30px; /* Ajusta los iconos para que queden más arriba del texto */
+  top: -25px; /* Ajusta los iconos para que queden más arriba del texto */
   left: 50%;
   transform: translateX(-50%);
   animation: sparkle 1s infinite alternate;
