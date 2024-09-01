@@ -94,7 +94,7 @@ li {
   font-size: 24px;
   top: -20px; /* Ajusta los iconos para que queden un poco más arriba del texto y un poco mas a la izquierda */
   left: 50%;
-  transform: translateX(-75%);
+  transform: translateX(-50%);
   animation: sparkle 1s infinite alternate;
 }
 
