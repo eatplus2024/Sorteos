@@ -67,8 +67,8 @@ li {
   font-size: 18px; /* Ajuste del tamaño de la fuente para dispositivos móviles */
   font-weight: bold;
   width: 100%;
-  max-width: 400px; /* Reducción del tamaño máximo para que no se salga en móviles */
-  height: 80px; /* Ajuste de la altura */
+  max-width: 300px; /* Reducción del tamaño máximo para que no se salga en móviles */
+  height: 70px; /* Ajuste de la altura */
   margin: auto;
   color: #333;
   background-color: rgba(249, 249, 249, 0.9); /* Fondo casi transparente para dar efecto de cristal */
@@ -90,10 +90,10 @@ li {
 }
 
 #digitalBoard.winner::after {
-  content: "🎉🎁";
+  content: "🎉🎉🎁🎁";
   position: absolute;
-  font-size: 20px; /* Tamaño de iconos reducido */
-  top: 35%; /* Ajuste vertical para que salgan un poco más arriba del nombre */
+  font-size: 24px; /* Tamaño de iconos reducido */
+  top: 10%; /* Ajuste vertical para que salgan más arriba del nombre */
   left: 50%; /* Centra los iconos horizontalmente en el contenedor */
   transform: translate(-50%, -50%); /* Ajusta la posición para que esté centrado */
   animation: sparkle 1s infinite alternate;
@@ -116,7 +116,13 @@ li {
   }
 
   #digitalBoard {
-    max-width: 300px; /* Aún más pequeño para móviles */
-    height: 60px; /* Altura reducida para móviles */
+    max-width: 100%; /* Ajuste para ocupar todo el ancho disponible en móviles */
+    height: auto; /* Altura ajustable en móviles */
+    font-size: 16px; /* Ajuste del tamaño de la fuente en móviles */
+  }
+
+  #digitalBoard.winner::after {
+    font-size: 18px; /* Tamaño de los iconos aún más reducido en móviles */
+    top: 5%; /* Mayor separación en móviles */
   }
 }
