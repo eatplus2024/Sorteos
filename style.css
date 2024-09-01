@@ -64,23 +64,23 @@ li {
 
 #digitalBoard {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   width: 100%;
-  max-width: 600px; /* Mismo ancho máximo que la caja de participantes */
-  height: 150px; /* Altura mayor para dar más espacio a los íconos */
-  margin: 20px auto; /* Centrar la caja y tener el mismo margen que .glass-box */
+  max-width: 600px; /* Igual al max-width de la caja de los participantes */
+  height: 180px; /* Más altura para dar espacio a los iconos */
+  margin: 20px auto; /* Centramos la caja */
   color: #333;
-  background-color: rgba(249, 249, 249, 0.9); /* Fondo casi transparente para dar efecto de cristal */
+  background-color: rgba(249, 249, 249, 0.9); /* Fondo casi transparente */
   padding: 20px;
-  border-radius: 10px; /* Misma curvatura que .glass-box */
+  border-radius: 10px; /* Igual que la caja de los participantes */
   border: 2mm solid gold; /* Bordes dorados */
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Sombra similar a la de .glass-box */
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Sombra similar a la caja de los participantes */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Importante para que los iconos se posicionen correctamente */
+  position: relative; /* Necesario para posicionar los iconos */
 }
 
 #digitalBoard.winner {
@@ -92,7 +92,7 @@ li {
   content: "🎉🎉🎁🎁";
   position: absolute;
   font-size: 24px;
-  top: -40px; /* Mueve los iconos más arriba para que no se superpongan al nombre */
+  top: -50px; /* Mueve los iconos más arriba */
   left: 50%;
   transform: translateX(-50%);
   animation: sparkle 1s infinite alternate;
@@ -116,7 +116,7 @@ li {
 
   #digitalBoard {
     max-width: 100%;
-    font-size: 16px;
+    font-size: 18px;
     padding: 15px;
   }
 
