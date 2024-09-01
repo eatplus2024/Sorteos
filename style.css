@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-image: url('https://cdn.pixabay.com/photo/2016/03/28/09/54/fireworks-1285269_1280.jpg');
+  background-image: url(https://cdn.pixabay.com/photo/2016/03/28/09/54/fireworks-1285269_1280.jpg);
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -12,7 +12,7 @@ body {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background: rgba(124, 174, 254, 0.5); /* Fondo cristalino azul con transparencia */
+  background-color: rgba(124, 174, 254, 0.5); /* Fondo azul con transparencia para efecto de cristal */
   border: 3mm solid gold; /* Bordes dorados de 3mm */
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -38,7 +38,7 @@ input, button {
 .glass-box {
   margin: 20px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1); /* Transparencia para efecto de cristal */
   border: 2mm solid gold; /* Bordes dorados de 2mm */
   border-radius: 10px;
   overflow: hidden;
@@ -66,36 +66,34 @@ li {
   margin-top: 20px;
   font-size: 20px;
   font-weight: bold;
-  width: 100%;
-  max-width: 100%; /* Ajuste de ancho al 100% del contenedor */
+  width: 100%; /* Ancho completo del contenedor */
+  max-width: 600px; /* Mismo ancho máximo que la caja de participantes */
   height: auto; /* Deja que la altura sea automática */
-  margin: 0 auto; /* Centrar la caja */
+  margin: 20px auto; /* Centrar la caja y tener el mismo margen que .glass-box */
   color: #333;
   background-color: rgba(249, 249, 249, 0.9); /* Fondo casi transparente para dar efecto de cristal */
-  padding: 10px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 20px; /* Ajuste del padding para que coincida con .glass-box */
+  border-radius: 10px; /* Misma curvatura que .glass-box */
   border: 2mm solid gold; /* Bordes dorados */
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Sombra similar a la de .glass-box */
 }
 
 #digitalBoard.winner {
   background-color: #FFD700; /* Color dorado */
   color: #000;
-  font-size: 20px; /* Ajuste del tamaño de la fuente en modo ganador */
-  position: relative; /* Asegura que los iconos se posicionen correctamente dentro del contenedor */
-  overflow: hidden; /* Evita que los iconos se muestren fuera del contenedor */
+  font-size: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 #digitalBoard.winner::after {
   content: "🎉🎉🎁🎁";
   position: absolute;
-  font-size: 24px; /* Tamaño de iconos ajustado */
-  top: -20px; /* Mover los iconos más arriba */
-  left: 50%; /* Centra los iconos horizontalmente en el contenedor */
-  transform: translateX(-50%); /* Ajuste horizontal para que esté centrado */
+  font-size: 24px;
+  top: -20px; /* Mueve los iconos más arriba */
+  left: 50%;
+  transform: translateX(-50%);
   animation: sparkle 1s infinite alternate;
 }
 
@@ -111,18 +109,19 @@ li {
 /* Media Query para vistas móviles */
 @media screen and (max-width: 600px) {
   .main-container {
-    margin: 20px; /* Reduce el margen para ajustarse mejor a pantallas pequeñas */
-    padding: 15px; /* Reduce el padding para ajustarse mejor a pantallas pequeñas */
+    margin: 20px;
+    padding: 15px;
   }
 
   #digitalBoard {
-    max-width: 100%; /* Ajuste para ocupar todo el ancho disponible en móviles */
-    height: auto; /* Altura ajustable en móviles */
-    font-size: 16px; /* Ajuste del tamaño de la fuente en móviles */
+    max-width: 100%;
+    height: auto;
+    font-size: 16px;
+    padding: 15px; /* Ajuste de padding para vistas móviles */
   }
 
   #digitalBoard.winner::after {
-    font-size: 18px; /* Tamaño de los iconos aún más reducido en móviles */
-    top: -10px; /* Mover los iconos más arriba en móviles */
+    font-size: 18px;
+    top: -10px; /* Ajuste adicional para móviles */
   }
 }
