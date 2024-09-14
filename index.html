@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,10 +15,17 @@
         <button onclick="addParticipant()">Participar</button>
 
         <h2>Participantes</h2>
+
+        <!-- Sección de botones fuera de la caja de participantes -->
+        <div class="buttons-container">
+            <button id="editBtn" onclick="toggleEditMode()">Activar Edición</button>
+            <button id="deleteBtn" onclick="toggleDeleteMode()">Eliminar Participante</button>
+            <button onclick="clearParticipants()">Eliminar Todos</button>
+        </div>
+
         <div class="glass-box">
             <ul id="participantsList"></ul>
         </div>
-        <button onclick="clearParticipants()">Borrar todos los participantes</button>
 
         <h2>Ganador</h2>
         <div id="digitalBoard">Nadie ha ganado aún</div>
