@@ -1,4 +1,6 @@
 let participants = JSON.parse(localStorage.getItem('participants')) || [];
+let editMode = false;
+let deleteMode = false;
 
 function addParticipant() {
     const name = document.getElementById('name').value;
@@ -15,22 +17,27 @@ function addParticipant() {
 function updateParticipantsList() {
     const list = document.getElementById('participantsList');
     list.innerHTML = '';
+
     participants.forEach((participant, index) => {
         const li = document.createElement('li');
         li.textContent = participant;
 
-        // Botón para editar participante
-        const editBtn = document.createElement('button');
-        editBtn.textContent = 'Editar';
-        editBtn.onclick = () => editParticipant(index);
+        if (editMode) {
+            // Botón de edición
+            const editBtn = document.createElement('button');
+            editBtn.textContent = 'Editar';
+            editBtn.onclick = () => editParticipant(index);
+            li.appendChild(editBtn);
+        }
 
-        // Botón para eliminar participante
-        const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Eliminar';
-        deleteBtn.onclick = () => deleteParticipant(index);
+        if (deleteMode) {
+            // Botón de eliminación
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Eliminar';
+            deleteBtn.onclick = () => deleteParticipant(index);
+            li.appendChild(deleteBtn);
+        }
 
-        li.appendChild(editBtn);
-        li.appendChild(deleteBtn);
         list.appendChild(li);
     });
 }
@@ -60,6 +67,20 @@ function clearParticipants() {
         updateParticipantsList();
         saveParticipants();
     }
+}
+
+// Modo de edición
+function toggleEditMode() {
+    editMode = !editMode;
+    updateParticipantsList();
+    document.getElementById('editBtn').textContent = editMode ? "Desactivar Edición" : "Activar Edición";
+}
+
+// Modo de eliminación
+function toggleDeleteMode() {
+    deleteMode = !deleteMode;
+    updateParticipantsList();
+    document.getElementById('deleteBtn').textContent = deleteMode ? "Desactivar Eliminar" : "Eliminar Participante";
 }
 
 function pickWinner() {
