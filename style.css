@@ -62,29 +62,38 @@ li {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+li button {
+  margin-left: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
 #digitalBoard {
   margin-top: 20px;
   font-size: 22px;
   font-weight: bold;
   width: 65%; /* 65% del ancho máximo */
-  max-width: 400px; /* 75% de 600px */
-  height: 45px; /* La mitad de la altura anterior */
-  margin: 20px auto; /* Centramos la caja */
+  max-width: 400px;
+  height: 45px;
+  margin: 20px auto; 
   color: #333;
-  background-color: rgba(249, 249, 249, 0.9); /* Fondo casi transparente */
+  background-color: rgba(249, 249, 249, 0.9); 
   padding: 20px;
-  border-radius: 10px; /* Igual que la caja de los participantes */
-  border: 2mm solid gold; /* Bordes dorados */
+  border-radius: 10px;
+  border: 2mm solid gold; 
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* Sombra similar a la caja de los participantes */
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); 
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Necesario para posicionar los iconos */
+  position: relative; 
 }
 
 #digitalBoard.winner {
-  background-color: #FFD700; /* Color dorado */
+  background-color: #FFD700; 
   color: #000;
 }
 
@@ -92,7 +101,7 @@ li {
   content: "🎉🎉🎁🎁";
   position: absolute;
   font-size: 24px;
-  top: -20px; /* Ajusta los iconos para que queden un poco más arriba del texto y un poco mas a la derecha */
+  top: -20px; 
   left: 50%;
   transform: translateX(-50%);
   animation: sparkle 1s infinite alternate;
@@ -107,7 +116,6 @@ li {
   }
 }
 
-/* Media Query para vistas móviles */
 @media screen and (max-width: 600px) {
   .main-container {
     margin: 20px;
@@ -115,13 +123,13 @@ li {
   }
 
   #digitalBoard {
-    max-width: 90%; /* Ajusta el ancho al 90% del contenedor principal */
+    max-width: 90%; 
     font-size: 18px;
     padding: 15px;
   }
 
   #digitalBoard.winner::after {
     font-size: 18px;
-    top: -20px; /* Ajuste adicional para móviles */
+    top: -20px; 
   }
 }
