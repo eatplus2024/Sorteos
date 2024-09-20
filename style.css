@@ -35,14 +35,27 @@ input, button {
   cursor: pointer;
 }
 
+#winnerButton {
+  background-color: #333;
+  color: #fff;
+}
+
 .buttons-container {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end; /* Los botones se alinearán hacia la derecha */
 }
 
 .buttons-container button {
-  margin-right: 10px;
-  padding: 10px;
-  font-size: 14px;
+  margin: 0 5px;
+  padding: 5px;
+  font-size: 12px; /* Tamaño pequeño de los botones */
+  width: 30px; /* Tamaño reducido */
+  height: 30px; /* Tamaño reducido */
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid gold;
 }
 
 .glass-box {
@@ -82,64 +95,4 @@ li button {
 }
 
 #digitalBoard {
-  margin-top: 20px;
-  font-size: 22px;
-  font-weight: bold;
-  width: 65%;
-  max-width: 400px;
-  height: 45px;
-  margin: 20px auto;
-  color: #333;
-  background-color: rgba(249, 249, 249, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  border: 2mm solid gold;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-#digitalBoard.winner {
-  background-color: #FFD700;
-  color: #000;
-}
-
-#digitalBoard.winner::after {
-  content: "🎉🎉🎁🎁";
-  position: absolute;
-  font-size: 24px;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: sparkle 1s infinite alternate;
-}
-
-@keyframes sparkle {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.2);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .main-container {
-    margin: 20px;
-    padding: 15px;
-  }
-
-  #digitalBoard {
-    max-width: 90%;
-    font-size: 18px;
-    padding: 15px;
-  }
-
-  #digitalBoard.winner::after {
-    font-size: 18px;
-    top: -20px;
-  }
-}
+  margin-top: 20px
