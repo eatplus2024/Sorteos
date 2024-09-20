@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SorteoApp</title>
+    <title>Sorteo DeliPlan</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-container">
         <img src="https://cdn.pixabay.com/photo/2024/08/31/18/47/deliplan-9012182__340.png" alt="Logotipo" class="logo">
-        <h1>SorteoApp</h1>
+        <h1>Sorteo DeliPlan</h1> <!-- Cambiado el texto de SorteoApp a Sorteo DeliPlan -->
         <p>Ingresa al sorteo:</p>
         <input type="text" id="name" placeholder="Tu nombre">
         <button onclick="addParticipant()">Participar</button>
@@ -18,9 +18,9 @@
 
         <!-- Sección de botones fuera de la caja de participantes -->
         <div class="buttons-container">
-            <button id="editBtn" onclick="toggleEditMode()">Activar Edición</button>
-            <button id="deleteBtn" onclick="toggleDeleteMode()">Eliminar Participante</button>
-            <button onclick="clearParticipants()">Eliminar Todos</button>
+            <button id="editBtn" onclick="toggleEditMode()">📝</button> <!-- Icono pequeño para edición -->
+            <button id="deleteBtn" onclick="toggleDeleteMode()">🗑️</button> <!-- Icono pequeño para eliminar -->
+            <button onclick="clearParticipants()">❌</button> <!-- Icono pequeño para eliminar todos -->
         </div>
 
         <div class="glass-box">
@@ -29,7 +29,7 @@
 
         <h2>Ganador</h2>
         <div id="digitalBoard">Nadie ha ganado aún</div>
-        <button onclick="pickWinner()">Elegir Ganador</button>
+        <button id="winnerButton" onclick="pickWinner()">Elegir Ganador</button>
     </div>
 
     <script src="script.js"></script>
