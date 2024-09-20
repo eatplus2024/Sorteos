@@ -73,14 +73,14 @@ function clearParticipants() {
 function toggleEditMode() {
     editMode = !editMode;
     updateParticipantsList();
-    document.getElementById('editBtn').textContent = editMode ? "Desactivar Edición" : "Activar Edición";
+    document.getElementById('editBtn').textContent = editMode ? "Desactivar Edición" : "📝";
 }
 
 // Modo de eliminación
 function toggleDeleteMode() {
     deleteMode = !deleteMode;
     updateParticipantsList();
-    document.getElementById('deleteBtn').textContent = deleteMode ? "Desactivar Eliminar" : "Eliminar Participante";
+    document.getElementById('deleteBtn').textContent = deleteMode ? "Desactivar Eliminar" : "🗑️";
 }
 
 function pickWinner() {
@@ -90,9 +90,14 @@ function pickWinner() {
     }
 
     const digitalBoard = document.getElementById('digitalBoard');
+    const winnerButton = document.getElementById('winnerButton');
     let currentIndex = 0;
     const speed = 100; // Velocidad de cambio de nombre en milisegundos
     const duration = 5000; // Duración total del efecto en milisegundos
+
+    // Cambia el color del botón a verde cuando se presiona
+    winnerButton.style.backgroundColor = 'green';
+    winnerButton.style.color = 'black';
 
     digitalBoard.classList.remove('winner');
 
@@ -106,6 +111,10 @@ function pickWinner() {
         const winnerIndex = Math.floor(Math.random() * participants.length);
         digitalBoard.textContent = `¡El ganador es: ${participants[winnerIndex]}!`;
         digitalBoard.classList.add('winner');
+
+        // Restablece el color original del botón cuando se elige el ganador
+        winnerButton.style.backgroundColor = '';
+        winnerButton.style.color = '';
     }, duration);
 }
 
