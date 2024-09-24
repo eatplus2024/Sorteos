@@ -1,96 +1,162 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url(https://cdn.pixabay.com/photo/2016/03/28/09/54/fireworks-1285269_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    margin-bottom: 20px;
+.main-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(124, 174, 254, 0.5);
+  border: 3mm solid gold;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #333;
 }
 
-header img {
-    max-width: 150px;
-    height: auto;
+.logo {
+  max-width: 200px;
+  margin-bottom: 20px;
 }
 
-header h1 {
-    font-size: 1.5rem;
-    margin: 5px;
+input, button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid gold;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
 }
 
-h2 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
+.buttons-container button {
+  padding: 5px;
+  font-size: 12px;
 }
 
-.participant-list {
-    text-align: left;
-    margin-bottom: 20px;
+.glass-box {
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2mm solid gold;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
-.participant-list input {
-    display: inline-block;
-    margin-right: 5px;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.controls {
-    margin-bottom: 20px;
+li {
+  background-color: #001f3f;
+  color: white;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.controls button {
-    font-size: 12px;
-    padding: 10px 10px;
-    margin: 5px;
-    cursor: pointer;
+li button {
+  margin-left: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
 }
 
-#drawButton {
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    border: none;
+#digitalBoard {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  width: 65%;
+  max-width: 400px;
+  height: 45px;
+  margin: 20px auto;
+  color: #333;
+  background-color: rgba(249, 249, 249, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2mm solid gold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#digitalBoard.winner {
+  background-color: #FFD700;
+  color: #000;
+}
+
+#digitalBoard.winner::after {
+  content: "🎉🎉🎁🎁";
+  position: absolute;
+  font-size: 24px;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sparkle 1s infinite alternate;
+}
+
+@keyframes sparkle {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+#pickWinnerBtn {
+  background-color: #333;
+  color: white;
+  border: 2px solid gold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#pickWinnerBtn:active {
+  background-color: green;
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .main-container {
+    margin: 20px;
     padding: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+  }
 
-#drawButton:active {
-    background-color: green;
-    color: black;
-}
+  #digitalBoard {
+    max-width: 90%;
+    font-size: 18px;
+    padding: 15px;
+  }
 
-.winner-box {
-    display: none;
-    margin-top: 20px;
-}
-
-.winner {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.winner-icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-}
-
-.winner-icon img {
-    max-width: 100%;
-    height: auto;
+  #digitalBoard.winner::after {
+    font-size: 18px;
+    top: -20px;
+  }
 }
