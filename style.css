@@ -1,98 +1,96 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-image: url(https://cdn.pixabay.com/photo/2016/03/28/09/54/fireworks-1285269_1280.jpg);
-  background-size: cover;
-  background-position: center;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-.main-container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: rgba(124, 174, 254, 0.5);
-  border: 3mm solid gold;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  color: #333;
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 20px;
 }
 
-.logo {
-  max-width: 200px;
-  margin-bottom: 20px;
+header img {
+    max-width: 150px;
+    height: auto;
 }
 
-input, button {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  border: 2px solid gold;
-  background-color: #333;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
+header h1 {
+    font-size: 1.5rem;
+    margin: 5px;
 }
 
-#winnerButton {
-  background-color: #333;
-  color: #fff;
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.buttons-container {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: flex-end; /* Los botones se alinearán hacia la derecha */
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
 }
 
-.buttons-container button {
-  margin: 0 5px;
-  padding: 5px;
-  font-size: 12px; /* Tamaño pequeño de los botones */
-  width: 30px; /* Tamaño reducido */
-  height: 30px; /* Tamaño reducido */
-  border-radius: 50%;
-  background-color: #333;
-  color: #fff;
-  border: 1px solid gold;
+.participant-list {
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-.glass-box {
-  margin: 20px auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2mm solid gold;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 600px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+.participant-list input {
+    display: inline-block;
+    margin-right: 5px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.controls {
+    margin-bottom: 20px;
 }
 
-li {
-  background-color: #001f3f;
-  color: white;
-  margin: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+.controls button {
+    font-size: 12px;
+    padding: 10px 10px;
+    margin: 5px;
+    cursor: pointer;
 }
 
-li button {
-  margin-left: 10px;
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
+#drawButton {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#digitalBoard {
-  margin-top: 20px
+#drawButton:active {
+    background-color: green;
+    color: black;
+}
+
+.winner-box {
+    display: none;
+    margin-top: 20px;
+}
+
+.winner {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.winner-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.winner-icon img {
+    max-width: 100%;
+    height: auto;
+}
