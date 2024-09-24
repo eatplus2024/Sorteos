@@ -4,32 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorteo DeliPlan</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main-container">
-        <img src="https://cdn.pixabay.com/photo/2024/08/31/18/47/deliplan-9012182__340.png" alt="Logotipo" class="logo">
-        <h1>Sorteo DeliPlan</h1> <!-- Cambiado el texto de SorteoApp a Sorteo DeliPlan -->
-        <p>Ingresa al sorteo:</p>
-        <input type="text" id="name" placeholder="Tu nombre">
-        <button onclick="addParticipant()">Participar</button>
+    <header>
+        <img src="logo.png" alt="Logo">
+        <h1>Sorteo DeliPlan</h1>
+    </header>
 
+    <div class="container">
         <h2>Participantes</h2>
-
-        <!-- Sección de botones fuera de la caja de participantes -->
-        <div class="buttons-container">
-            <button id="editBtn" onclick="toggleEditMode()">📝</button> <!-- Icono pequeño para edición -->
-            <button id="deleteBtn" onclick="toggleDeleteMode()">🗑️</button> <!-- Icono pequeño para eliminar -->
-            <button onclick="clearParticipants()">❌</button> <!-- Icono pequeño para eliminar todos -->
+        <div class="controls">
+            <button id="editButton">Editar Participantes</button>
+            <button id="deleteOneButton">Eliminar Participante</button>
+            <button id="deleteAllButton">Eliminar Todos</button>
         </div>
 
-        <div class="glass-box">
-            <ul id="participantsList"></ul>
+        <div class="participant-list" id="participantList">
+            <!-- Aquí se listarán los participantes -->
         </div>
 
-        <h2>Ganador</h2>
-        <div id="digitalBoard">Nadie ha ganado aún</div>
-        <button id="winnerButton" onclick="pickWinner()">Elegir Ganador</button>
+        <button id="drawButton">Elegir Ganador</button>
+
+        <div class="winner-box" id="winnerBox">
+            <div class="winner-icon">
+                <img src="premio.png" alt="Premio">
+            </div>
+            <div class="winner" id="winnerName"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
