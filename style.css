@@ -46,6 +46,19 @@ input, button {
 .buttons-container button {
   padding: 5px;
   font-size: 12px;
+  background-color: #333;
+  border: 2px solid gold;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container button i {
+  margin: 0;
+  font-size: 16px;
 }
 
 .glass-box {
@@ -73,15 +86,20 @@ li {
   border-radius: 5px;
   font-size: 18px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 li button {
-  margin-left: 10px;
-  background-color: #f44336;
-  color: white;
+  background-color: transparent;
   border: none;
-  padding: 5px;
+  color: white;
   cursor: pointer;
+}
+
+li button i {
+  font-size: 16px;
 }
 
 #digitalBoard {
@@ -135,28 +153,4 @@ li button {
   border: 2px solid gold;
   padding: 10px 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#pickWinnerBtn:active {
-  background-color: green;
-  color: black;
-}
-
-@media screen and (max-width: 600px) {
-  .main-container {
-    margin: 20px;
-    padding: 15px;
-  }
-
-  #digitalBoard {
-    max-width: 90%;
-    font-size: 18px;
-    padding: 15px;
-  }
-
-  #digitalBoard.winner::after {
-    font-size: 18px;
-    top: -20px;
-  }
-}
+  transition: background-color 0.3s ease, color 
