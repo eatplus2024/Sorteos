@@ -1,4 +1,6 @@
 let participants = JSON.parse(localStorage.getItem('participants')) || [];
+let editMode = false;
+let deleteMode = false;
 
 function addParticipant() {
     const name = document.getElementById('name').value;
@@ -6,7 +8,7 @@ function addParticipant() {
         participants.push(name);
         updateParticipantsList();
         saveParticipants();
-        document.getElementById('name').value = ''; // Limpiar el campo de entrada
+        document.getElementById('name').value = '';  // Limpiar el campo de entrada
     } else {
         alert("Por favor, ingresa un nombre.");
     }
@@ -20,35 +22,26 @@ function updateParticipantsList() {
         const li = document.createElement('li');
         li.textContent = participant;
 
-        // Contenedor de botones
+        // Agregar botones de editar y eliminar en cada participante
         const actions = document.createElement('div');
-        actions.style.display = 'inline-block';
-        actions.style.marginLeft = '10px';
 
-        // Botón de editar
-        const editBtn = document.createElement('button');
-        editBtn.innerHTML = '<i class="fas fa-pencil-alt"></i>'; // Ícono de lápiz
-        editBtn.title = 'Editar participante';
-        editBtn.onclick = () => editParticipant(index);
-        editBtn.style.marginRight = '5px';
+        if (editMode) {
+            const editBtn = document.createElement('button');
+            editBtn.innerHTML = '<i class="fas fa-edit"></i>';
+            editBtn.onclick = () => editParticipant(index);
+            actions.appendChild(editBtn);
+        }
 
-        // Botón de eliminar
-        const deleteBtn = document.createElement('button');
-        deleteBtn.innerHTML = '<i class="fas fa-trash"></i>'; // Ícono de basura
-        deleteBtn.title = 'Eliminar participante';
-        deleteBtn.onclick = () => deleteParticipant(index);
-
-        // Añadir botones a las acciones
-        actions.appendChild(editBtn);
-        actions.appendChild(deleteBtn);
+        if (deleteMode) {
+            const deleteBtn = document.createElement('button');
+            deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+            deleteBtn.onclick = () => deleteParticipant(index);
+            actions.appendChild(deleteBtn);
+        }
 
         li.appendChild(actions);
         list.appendChild(li);
     });
-
-    // Mostrar u ocultar el botón para limpiar la lista
-    const clearListBtn = document.getElementById('clearListBtn');
-    clearListBtn.style.display = participants.length > 0 ? 'block' : 'none';
 }
 
 function saveParticipants() {
@@ -56,11 +49,9 @@ function saveParticipants() {
 }
 
 function clearParticipants() {
-    if (confirm('¿Estás seguro de que deseas eliminar toda la lista de participantes?')) {
-        participants = [];
-        updateParticipantsList();
-        saveParticipants();
-    }
+    participants = [];
+    updateParticipantsList();
+    saveParticipants();
 }
 
 function pickWinner() {
@@ -71,8 +62,8 @@ function pickWinner() {
 
     const digitalBoard = document.getElementById('digitalBoard');
     let currentIndex = 0;
-    const speed = 100; // Velocidad de cambio de nombre en milisegundos
-    const duration = 5000; // Duración total del efecto en milisegundos
+    const speed = 100;  // Velocidad de cambio de nombre en milisegundos
+    const duration = 5000;  // Duración total del efecto en milisegundos
 
     digitalBoard.classList.remove('winner');
 
@@ -88,13 +79,23 @@ function pickWinner() {
     setTimeout(() => {
         clearInterval(interval);
         const winnerIndex = Math.floor(Math.random() * participants.length);
-        digitalBoard.textContent = `¡El ganador es: ${participants[winnerIndex]}!`;
+        digitalBoard.textContent = ¡El ganador es: ${participants[winnerIndex]}!;
         digitalBoard.classList.add('winner');
 
         // Restaurar el color original del botón
         pickWinnerBtn.style.backgroundColor = '#333';
         pickWinnerBtn.style.color = 'white';
     }, duration);
+}
+
+function toggleEditMode() {
+    editMode = !editMode;
+    updateParticipantsList();
+}
+
+function toggleDeleteMode() {
+    deleteMode = !deleteMode;
+    updateParticipantsList();
 }
 
 function editParticipant(index) {
@@ -107,7 +108,7 @@ function editParticipant(index) {
 }
 
 function deleteParticipant(index) {
-    if (confirm(`¿Estás seguro de que quieres eliminar a ${participants[index]}?`)) {
+    if (confirm(¿Estás seguro de que quieres eliminar a ${participants[index]}?)) {
         participants.splice(index, 1);
         updateParticipantsList();
         saveParticipants();
