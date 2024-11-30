@@ -3,12 +3,13 @@ let editMode = false;
 let deleteMode = false;
 
 function addParticipant() {
-    const name = document.getElementById('name').value;
+    const nameInput = document.getElementById('name');
+    const name = nameInput.value.trim(); // Eliminar espacios innecesarios
     if (name) {
         participants.push(name);
-        updateParticipantsList();
         saveParticipants();
-        document.getElementById('name').value = '';  // Limpiar el campo de entrada
+        updateParticipantsList();
+        nameInput.value = ''; // Limpiar el campo de entrada
     } else {
         alert("Por favor, ingresa un nombre.");
     }
@@ -22,8 +23,8 @@ function updateParticipantsList() {
         const li = document.createElement('li');
         li.textContent = participant;
 
-        // Agregar botones de editar y eliminar en cada participante
         const actions = document.createElement('div');
+        actions.className = 'actions'; // Clase para estilos adicionales
 
         if (editMode) {
             const editBtn = document.createElement('button');
@@ -45,13 +46,19 @@ function updateParticipantsList() {
 }
 
 function saveParticipants() {
-    localStorage.setItem('participants', JSON.stringify(participants));
+    try {
+        localStorage.setItem('participants', JSON.stringify(participants));
+    } catch (error) {
+        alert("Error al guardar los participantes. Verifica que tu navegador permita el uso de localStorage.");
+    }
 }
 
 function clearParticipants() {
-    participants = [];
-    updateParticipantsList();
-    saveParticipants();
+    if (confirm("¿Estás seguro de que quieres eliminar a todos los participantes?")) {
+        participants = [];
+        saveParticipants();
+        updateParticipantsList();
+    }
 }
 
 function pickWinner() {
@@ -62,14 +69,10 @@ function pickWinner() {
 
     const digitalBoard = document.getElementById('digitalBoard');
     let currentIndex = 0;
-    const speed = 100;  // Velocidad de cambio de nombre en milisegundos
-    const duration = 5000;  // Duración total del efecto en milisegundos
+    const speed = 100; // Velocidad de cambio de nombre en milisegundos
+    const duration = 5000; // Duración total del efecto en milisegundos
 
     digitalBoard.classList.remove('winner');
-
-    const pickWinnerBtn = document.getElementById('pickWinnerBtn');
-    pickWinnerBtn.style.backgroundColor = 'green';
-    pickWinnerBtn.style.color = 'black';
 
     const interval = setInterval(() => {
         digitalBoard.textContent = participants[currentIndex];
@@ -81,10 +84,6 @@ function pickWinner() {
         const winnerIndex = Math.floor(Math.random() * participants.length);
         digitalBoard.textContent = `¡El ganador es: ${participants[winnerIndex]}!`;
         digitalBoard.classList.add('winner');
-
-        // Restaurar el color original del botón
-        pickWinnerBtn.style.backgroundColor = '#333';
-        pickWinnerBtn.style.color = 'white';
     }, duration);
 }
 
@@ -101,19 +100,21 @@ function toggleDeleteMode() {
 function editParticipant(index) {
     const newName = prompt('Ingresa el nuevo nombre:', participants[index]);
     if (newName) {
-        participants[index] = newName;
-        updateParticipantsList();
+        participants[index] = newName.trim();
         saveParticipants();
+        updateParticipantsList();
     }
 }
 
 function deleteParticipant(index) {
     if (confirm(`¿Estás seguro de que quieres eliminar a ${participants[index]}?`)) {
         participants.splice(index, 1);
-        updateParticipantsList();
         saveParticipants();
+        updateParticipantsList();
     }
 }
 
 // Actualiza la lista de participantes al cargar la página
-window.onload = updateParticipantsList;
+window.onload = () => {
+    updateParticipantsList();
+};
