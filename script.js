@@ -79,7 +79,7 @@ function pickWinner() {
     setTimeout(() => {
         clearInterval(interval);
         const winnerIndex = Math.floor(Math.random() * participants.length);
-        digitalBoard.textContent = ¡El ganador es: ${participants[winnerIndex]}!;
+        digitalBoard.textContent = `¡El ganador es: ${participants[winnerIndex]}!`;
         digitalBoard.classList.add('winner');
 
         // Restaurar el color original del botón
@@ -108,7 +108,7 @@ function editParticipant(index) {
 }
 
 function deleteParticipant(index) {
-    if (confirm(¿Estás seguro de que quieres eliminar a ${participants[index]}?)) {
+    if (confirm(`¿Estás seguro de que quieres eliminar a ${participants[index]}?`)) {
         participants.splice(index, 1);
         updateParticipantsList();
         saveParticipants();
